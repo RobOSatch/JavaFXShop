@@ -20,10 +20,7 @@ public class JDBCProductDAO implements ProductDAO {
 
     public JDBCProductDAO() throws DAOException {
         connection = JDBCSingletonConnection.getConnection();
-    }
-
-    public JDBCProductDAO(Connection connection) throws DAOException {
-        this.connection = connection;
+        logger.debug("ProductDAO created successfully.");
     }
 
     @Override
@@ -31,8 +28,6 @@ public class JDBCProductDAO implements ProductDAO {
         logger.debug("Entering create-Method with parameters:\n{}", product);
 
         checkIfProductIsNull(product);
-
-        connection = JDBCSingletonConnection.reconnectIfConnectionLost();
 
         try {
             PreparedStatement createStatement = connection.prepareStatement("INSERT INTO Product (name, price, stock, image) VALUES (?," + product.getPrice() + "," + product.getStock() + ",?);", Statement.RETURN_GENERATED_KEYS);
@@ -56,8 +51,6 @@ public class JDBCProductDAO implements ProductDAO {
     @Override
     public List<Product> findAll() throws DAOException {
         logger.debug("Entering findAll-Method");
-
-        connection = JDBCSingletonConnection.reconnectIfConnectionLost();
 
         ArrayList<Product> result = new ArrayList<Product>();
 
@@ -83,8 +76,6 @@ public class JDBCProductDAO implements ProductDAO {
         checkIfProductIsNull(from);
         checkIfProductIsNull(to);
 
-        connection = JDBCSingletonConnection.reconnectIfConnectionLost();
-
         ArrayList<Product> result = new ArrayList<Product>();
 
         try {
@@ -107,8 +98,6 @@ public class JDBCProductDAO implements ProductDAO {
         logger.debug("Entering update-Method with parameters:\n{}", product);
 
         checkIfProductIsNull(product);
-
-        connection = JDBCSingletonConnection.reconnectIfConnectionLost();
 
         try {
             PreparedStatement updateStatement = connection.prepareStatement("UPDATE Product SET name=?, price=" + product.getPrice() + ", stock=" + product.getStock() + ", image=?, is_Deleted=" + product.getDeleted() + " WHERE productID=" + product.getProductId() + ";");
@@ -141,6 +130,11 @@ public class JDBCProductDAO implements ProductDAO {
         checkIfProductIsNull(product);
         product.setDeleted(true);
         update(product);
+    }
+
+    @Override
+    public void close() throws DAOException {
+        JDBCSingletonConnection.closeConnection();
     }
 
     private void checkIfProductIsNull(Product product) throws DAOException {

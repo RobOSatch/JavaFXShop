@@ -44,4 +44,9 @@ public interface ProductDAO {
      * @throws DAOException If the product could not be removed.
      */
     public void delete(Product product) throws DAOException;
+
+    /**
+     * Closes the database connection.
+     */
+    public void close() throws DAOException;
 }

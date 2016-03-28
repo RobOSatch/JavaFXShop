@@ -20,10 +20,7 @@ public class JDBCBillDAO implements BillDAO {
 
     public JDBCBillDAO() throws DAOException {
         connection = JDBCSingletonConnection.getConnection();
-    }
-
-    public JDBCBillDAO(Connection connection) throws DAOException {
-        this.connection = connection;
+        logger.debug("BillDAO created successfully.");
     }
 
     @Override
@@ -31,8 +28,6 @@ public class JDBCBillDAO implements BillDAO {
         logger.debug("Entering create-Method with parameters:\n{}", bill);
 
         checkIfBillIsNull(bill);
-
-        connection = JDBCSingletonConnection.reconnectIfConnectionLost();
 
         try {
             PreparedStatement createStatement = connection.prepareStatement("INSERT INTO Bill (BillRecipientFirstName, BillRecipientLastName, PaymentMethod) VALUES (?,?,?);", Statement.RETURN_GENERATED_KEYS);
@@ -56,8 +51,6 @@ public class JDBCBillDAO implements BillDAO {
     @Override
     public List<Bill> findAll() throws DAOException {
         logger.debug("Entering findAll-Method");
-
-        connection = JDBCSingletonConnection.reconnectIfConnectionLost();
 
         ArrayList<Bill> result = new ArrayList<Bill>();
 
@@ -83,8 +76,6 @@ public class JDBCBillDAO implements BillDAO {
         checkIfBillIsNull(from);
         checkIfBillIsNull(to);
 
-        connection = JDBCSingletonConnection.reconnectIfConnectionLost();
-
         ArrayList<Bill> result = new ArrayList<Bill>();
 
         try {
@@ -100,6 +91,11 @@ public class JDBCBillDAO implements BillDAO {
 
         logger.debug("Successfully returned list of filtered entries.");
         return result;
+    }
+
+    @Override
+    public void close() throws DAOException {
+        JDBCSingletonConnection.closeConnection();
     }
 
     private void checkIfBillIsNull(Bill bill) throws DAOException {

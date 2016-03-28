@@ -22,7 +22,7 @@ public class JDBCSingletonConnection {
             connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/sepm", "1326125", "Barta639");
         } catch (SQLException ex) {
             logger.error(ex.getMessage());
-            throw new DAOException("Could not connect to database!");
+            throw new DAOException("Could not connect to database.");
         } catch (ClassNotFoundException ex) {
             logger.debug(ex.getMessage());
             throw new DAOException("Driver not found.");
@@ -56,25 +56,5 @@ public class JDBCSingletonConnection {
                 throw new DAOException(ex.getMessage());
             }
         }
-    }
-
-    /**
-     * Tries to reestablish the connection if it has been lost.
-     * @return The database connection.
-     * @throws DAOException If can not reconnect.
-     */
-    public static Connection reconnectIfConnectionLost() throws DAOException {
-        try {
-            if (connection != null && !connection.isValid(3)) {
-                connection = null;
-                logger.error("Connection lost.");
-            }
-        } catch (SQLException ex) {
-                logger.debug(ex.getMessage());
-                throw new DAOException(ex.getMessage());
-            }
-
-            connection = JDBCSingletonConnection.getConnection();
-            return connection;
     }
 }

@@ -9,17 +9,21 @@ public interface BillEntryDAO {
 
     /**
      * Creates a new bill entry.
-     * @param billEntry Contains the values for the new bill entry.
-     * @return A new bill entry.
-     * @throws DAOException If the bill entry could not be created.
+     * @param billEntries Contains the bill entries to be added.
+     * @throws DAOException If the bill entries could not be created.
      */
-    public BillEntry create(BillEntry billEntry) throws DAOException;
+    public void create(List<BillEntry> billEntries) throws DAOException;
 
     /**
-     * Returns a list of bill entries filtered by the product's, bill's and bill entry's IDs.
-     * @param billEntry Contains the filter values.
+     * Returns a list of bill entries filtered by the bill's ID.
+     * @param fkInvoiceNumber Contains the filter value.
      * @return The search result.
      * @throws DAOException If the search could not be performed.
      */
-    public List<BillEntry> search(BillEntry billEntry) throws DAOException;
+    public List<BillEntry> filterByBill(Integer fkInvoiceNumber) throws DAOException;
+
+    /**
+     * Closes the database connection.
+     */
+    public void close() throws DAOException;
 }

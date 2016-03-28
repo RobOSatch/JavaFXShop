@@ -8,10 +8,9 @@ public class BillEntry {
     private Integer fkProductId;
     private String productName;
     private Double productPrice;
-    private String productImage;
     private Integer quantity;
 
-    public BillEntry(Integer id, Integer fkInvoiceNumber, Integer fkProductId, String productName, Double productPrice, String productImage, Integer quantity) {
+    public BillEntry(Integer id, Integer fkInvoiceNumber, Integer fkProductId, String productName, Double productPrice, Integer quantity) {
         this.id = id;
         this.fkInvoiceNumber = fkInvoiceNumber;
         this.fkProductId = fkProductId;
@@ -60,14 +59,6 @@ public class BillEntry {
         this.productPrice = productPrice;
     }
 
-    public String getProductImage() {
-        return productImage;
-    }
-
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
@@ -82,6 +73,10 @@ public class BillEntry {
         if (o == null || getClass() != o.getClass()) return false;
 
         BillEntry billEntry = (BillEntry) o;
+
+        if (this.getId() == null || ((BillEntry) o).getId() == null) {
+            return false;
+        }
 
         if (!id.equals(billEntry.id)) return false;
         if (!fkInvoiceNumber.equals(billEntry.fkInvoiceNumber)) return false;
@@ -105,7 +100,6 @@ public class BillEntry {
                 ", fkProductId=" + fkProductId +
                 ", productName='" + productName + '\'' +
                 ", productPrice=" + productPrice +
-                ", productImage='" + productImage + '\'' +
                 ", quantity=" + quantity +
                 '}';
     }

@@ -30,4 +30,9 @@ public interface BillDAO {
      * @throws DAOException If the search could not be performed.
      */
     public List<Bill> search(Bill from, Bill to) throws DAOException;
+
+    /**
+     * Closes the database connection.
+     */
+    public void close() throws DAOException;
 }
