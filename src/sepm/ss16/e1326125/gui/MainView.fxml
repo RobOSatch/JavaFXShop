@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sepm.ss16.e1326125.gui.MainViewController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <Menu mnemonicParsing="false" text="New...">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Product" />
+                        <MenuItem mnemonicParsing="false" text="Bill" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Exit" />
+               </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About..." />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TabPane prefHeight="471.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab closable="false" text="Products">
+                    <content>
+                        <fx:include fx:id="products" source="ProductView.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Bills">
+                    <content>
+                        <fx:include fx:id="bills" source="BillView.fxml" />
+                    </content>
+                </Tab>
+                  <Tab closable="false" text="Statistics">
+                      <content>
+                          <fx:include fx:id="statistics" source="StatisticsView.fxml" />
+                      </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

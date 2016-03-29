@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sepm.ss16.e1326125.gui.ProductViewController">
+   <children>
+      <TableView layoutX="10.0" layoutY="10.0" prefHeight="416.0" prefWidth="320.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="ID" />
+            <TableColumn prefWidth="117.0" text="Name" />
+            <TableColumn prefWidth="65.0" text="Price" />
+            <TableColumn prefWidth="62.0" text="Stock" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
