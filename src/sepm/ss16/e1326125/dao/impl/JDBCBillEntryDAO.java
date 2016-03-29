@@ -6,11 +6,13 @@ import sepm.ss16.e1326125.dao.BillEntryDAO;
 import sepm.ss16.e1326125.dao.DAOException;
 import sepm.ss16.e1326125.dao.JDBCSingletonConnection;
 import sepm.ss16.e1326125.entity.BillEntry;
+import sepm.ss16.e1326125.entity.Product;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class JDBCBillEntryDAO implements BillEntryDAO {
@@ -103,6 +105,19 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
             throw new DAOException(e.getMessage());
         }
         return stats;
+    }
+
+    @Override
+    public HashMap<Integer, Integer> calculateStatisticsForProduct(Integer productID, Integer amountOfDays) throws DAOException {
+        HashMap<Integer, Integer> stats = calculateStatistics(amountOfDays);
+        HashMap<Integer, Integer> result = new HashMap<Integer, Integer>();
+
+        for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+            if (entry.getKey() == productID) {
+                result.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return result;
     }
 
     @Override

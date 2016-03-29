@@ -86,11 +86,16 @@ public abstract class AbstractBillEntryDAOTest {
         assertEquals(result.size(), 3);
     }
 
-
     @Test
     public void statisticsShouldReturnRightSize() throws DAOException {
         HashMap<Integer, Integer> stats = billEntryDAO.calculateStatistics(100);
-        assertTrue(stats.containsValue(5));
+        assertTrue(stats.containsValue(4));
+        assertTrue(stats.containsValue(10));
     }
 
+    @Test
+    public void statisticsForProductShouldReturnRightAmount() throws DAOException {
+        HashMap<Integer, Integer> stats = billEntryDAO.calculateStatisticsForProduct(5, 100);
+        assertTrue(stats.containsValue(10));
+    }
 }

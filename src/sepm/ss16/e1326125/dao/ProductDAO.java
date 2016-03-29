@@ -39,6 +39,22 @@ public interface ProductDAO {
     public void update(Product product) throws DAOException;
 
     /**
+     * Alters the price of a product by the specified percentage.
+     * @param product The product to be updated.
+     * @param percentage The alter percentage.
+     * @throws DAOException If the product is null or the price is negative after alteration.
+     */
+    public void alterPriceByPercentage(Product product, Double percentage, Boolean decreasePrice) throws DAOException;
+
+    /**
+     * Alters the price of a product by the specified amount.
+     * @param product The product to be updated.
+     * @param amount The alter amount.
+     * @throws DAOException If the product is null or the price is negative after alteration.
+     */
+    public void alterPriceByAmount(Product product, Double amount) throws DAOException;
+
+    /**
      * Deletes a certain product.
      * @param product The product to be removed from the database.
      * @throws DAOException If the product could not be removed.

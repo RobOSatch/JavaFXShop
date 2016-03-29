@@ -1,6 +1,7 @@
 package sepm.ss16.e1326125.dao;
 
 import sepm.ss16.e1326125.entity.BillEntry;
+import sepm.ss16.e1326125.entity.Product;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,10 +25,16 @@ public interface BillEntryDAO {
     public List<BillEntry> filterByBill(Integer fkInvoiceNumber) throws DAOException;
 
     /**
-     * Returns a HashMap with the total amount of times a product has been sold in the last
+     * Returns a HashMap with the total amount of times all products have been sold in the last
      * x days. x can be specified by the user.
      */
     public HashMap<Integer, Integer> calculateStatistics(Integer amountOfDays) throws DAOException;
+
+    /**
+     * Returns a HashMap with the total amount of times a specific product has been sold in the last
+     * x days. x can be specified by the user.
+     */
+    public HashMap<Integer, Integer> calculateStatisticsForProduct(Integer productID, Integer amountOfDays) throws DAOException;
 
     /**
      * Closes the database connection.

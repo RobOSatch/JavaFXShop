@@ -16,8 +16,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         logger.error("Logger Test");
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("Super Erfolgreicher Pferde Megaoutlet");
+        primaryStage.setScene(new Scene(root, 980, 750));
         primaryStage.show();
     }
 

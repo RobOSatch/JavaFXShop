@@ -125,6 +125,47 @@ public class JDBCProductDAO implements ProductDAO {
     }
 
     @Override
+    public void alterPriceByPercentage(Product product, Double percentage, Boolean decreasePrice) throws DAOException {
+        logger.debug("Entering alterPrice-Method with percentage:\n{}", percentage);
+
+        checkIfProductIsNull(product);
+
+        if (decreasePrice && percentage < 100) {
+            percentage = percentage / 100;
+        } else {
+            throw new DAOException("Price can't be negative.");
+        }
+
+        if (!decreasePrice) {
+            if (percentage < 100) {
+                percentage = 1 + (percentage / 100);
+            }
+            percentage = percentage / 100;
+        }
+
+        if (product.getPrice() * percentage <= 0) {
+            throw new DAOException("Price can't be negative.");
+        }
+
+        product.setPrice(product.getPrice() * percentage);
+        update(product);
+    }
+
+    @Override
+    public void alterPriceByAmount(Product product, Double amount) throws DAOException {
+        logger.debug("Entering alterPrice-Method with absolute amount:\n{}", amount);
+
+        checkIfProductIsNull(product);
+
+        if ((product.getPrice() + amount) <= 0) {
+            throw new DAOException("Price can't be null.");
+        }
+
+        product.setPrice(product.getPrice() + amount);
+        update(product);
+    }
+
+    @Override
     public void delete(Product product) throws DAOException {
         logger.debug("Entering delete-Method with parameters:\n{}", product);
         checkIfProductIsNull(product);

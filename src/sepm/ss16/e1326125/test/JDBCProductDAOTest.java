@@ -20,7 +20,7 @@ public class JDBCProductDAOTest extends AbstractProductDAOTest {
     public void setUp() throws SQLException, DAOException {
         ProductDAO productDAO = new JDBCProductDAO();
         setProductDAO(productDAO);
-        Product validProduct = new Product(null, "Valid Test Object", 39.99, 10, "test1.png", false);
+        Product validProduct = new Product(null, "Valid Test Object", 40.00, 10, "test1.png", false);
         Product productWithNegativePrice = new Product(null, "Invalid Test Object 1", -1.00, 12, "test2.png", false);
         Product productWithNonExistingId = new Product(100, "Invalid Test Object 2", 20.00, 12, "test3.png", false);
         setProducts(validProduct, productWithNegativePrice, productWithNonExistingId);

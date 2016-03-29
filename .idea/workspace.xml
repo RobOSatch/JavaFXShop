@@ -2,10 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Controller.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/service/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Controller.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/BillEntryDAO.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/BillEntryDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/ProductDAO.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/ProductDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/gui/Main.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/gui/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/test/AbstractProductDAOTest.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/test/AbstractProductDAOTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/test/JDBCProductDAOTest.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/test/JDBCProductDAOTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/gui/sample.fxml" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/gui/sample.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/ProductDAO.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/ProductDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/sample.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/sample.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractProductDAOTest.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractProductDAOTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTest.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTest.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="38" selection-end-column="47" />
+              <caret line="164" column="24" selection-start-line="164" selection-start-column="24" selection-end-line="164" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -84,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="59" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractProductDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,74 +123,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillEntry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/BillEntry.java">
+      <file leaf-file-name="AbstractBillEntryDAOTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+              <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2384#2395#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="4.482422">
+              <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractBillEntryDAOTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70703125">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/Product.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-              <folding>
-                <element signature="e#789#790#0" expanded="true" />
-                <element signature="e#821#822#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JDBCBillEntryDAOTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCBillEntryDAOTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BillEntryDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JDBCBillEntryDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3748#3766#0" expanded="true" />
-              </folding>
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,24 +200,26 @@
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Controller.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/DAOException.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/JDBCConnection.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTests.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/Product.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractProductDAOTest.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/Bill.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/ServiceException.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillDAO.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/ProductDAO.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTest.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/JDBCSingletonConnection.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillDAO.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCBillEntryDAOTest.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/BillEntry.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Controller.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/ProductDAO.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractProductDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java" />
       </list>
     </option>
   </component>
@@ -467,12 +461,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/sepm/ss16/e1326125/service" />
       <recent name="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui" />
+      <recent name="$PROJECT_DIR$/src/sepm/ss16/e1326125/service" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JDBCBillEntryDAOTest">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -831,9 +825,10 @@
       <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCBillEntryDAOTest" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.JDBCBillEntryDAOTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.JDBCProductDAOTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCBillEntryDAOTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -866,39 +861,45 @@
       <option name="project" value="LOCAL" />
       <updated>1459206919431</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="statistics calculation added">
+      <created>1459221035189</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1459221035189</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 00h 54m 05s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 34m 49s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 00h 55m 05s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 35m 00s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 00h 55m 31s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 35m 09s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 00h 55m 59s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 35m 19s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 00h 56m 53s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 37m 24s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 01h 00m 58s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 39m 34s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 05h 08m 24s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 43m 21s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 05h 09m 15s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 47m 07s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 05h 09m 42s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 49m 22s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCBillEntryDAOTest - 2016.03.29 at 05h 10m 01s.xml">
-      <configuration name="JDBCBillEntryDAOTest" configurationId="JUnit" />
+    <history-entry file="JDBCProductDAOTest - 2016.03.29 at 18h 49m 33s.xml">
+      <configuration name="JDBCProductDAOTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -953,7 +954,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test commit with IntelliJ" />
     <MESSAGE value="added JUnit tests for BillEntryDAO and implemented the JDBCBillEntryDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="added JUnit tests for BillEntryDAO and implemented the JDBCBillEntryDAO" />
+    <MESSAGE value="statistics calculation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="statistics calculation added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -966,24 +968,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/ProductDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1016,6 +1000,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,8 +1019,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1151,7 +1136,8 @@
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3748#3766#0" expanded="true" />
+            <element signature="e#3812#3830#0" expanded="true" />
+            <element signature="e#4682#4700#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1183,7 +1169,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1238,13 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1253,34 +1232,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/ServiceException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20380434">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/ProductDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1319,39 +1274,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="59" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/Bill.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43945312">
           <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/BillEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1365,10 +1292,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractProductDAOTest.java">
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/Test.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24742268">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/BillEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3812#3830#0" expanded="true" />
+            <element signature="e#4682#4700#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/entity/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/ProductDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="96" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCProductDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1378,36 +1380,46 @@
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="38" selection-end-column="47" />
+          <caret line="164" column="24" selection-start-line="164" selection-start-column="24" selection-end-line="164" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/BillEntryDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractProductDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.70703125">
+          <caret line="132" column="57" selection-start-line="132" selection-start-column="57" selection-end-line="132" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3748#3766#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70703125">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2384#2395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.482422">
+          <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
