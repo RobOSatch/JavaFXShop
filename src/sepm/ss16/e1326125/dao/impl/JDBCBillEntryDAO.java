@@ -9,6 +9,7 @@ import sepm.ss16.e1326125.entity.BillEntry;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -83,6 +84,25 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
 
         logger.debug("Successfully returned list of filtered entries.");
         return result;
+    }
+
+    @Override
+    public HashMap<Integer, Integer> calculateStatistics(Integer amountOfDays) throws DAOException {
+
+        HashMap<Integer, Integer> stats = new HashMap<Integer, Integer>();
+
+        ResultSet rs = null;
+
+        try {
+            rs = connection.createStatement().executeQuery("SELECT billEntry.fkProductID, (SUM(billEntry.quantity)) AS sold_since_date FROM billEntry JOIN bill on billEntry.fkInvoiceNumber = bill.invoiceNumber where bill.issueDate > getDate() - " + amountOfDays + " group by billEntry.fkProductID;");
+
+            while(rs.next()) {
+                stats.put(rs.getInt(1), rs.getInt(2));
+            }
+        } catch (SQLException e) {
+            throw new DAOException(e.getMessage());
+        }
+        return stats;
     }
 
     @Override

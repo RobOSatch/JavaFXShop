@@ -6,6 +6,7 @@ import sepm.ss16.e1326125.dao.BillEntryDAO;
 import sepm.ss16.e1326125.dao.DAOException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
@@ -84,4 +85,12 @@ public abstract class AbstractBillEntryDAOTest {
         List<BillEntry> result = billEntryDAO.filterByBill(1);
         assertEquals(result.size(), 3);
     }
+
+
+    @Test
+    public void statisticsShouldReturnRightSize() throws DAOException {
+        HashMap<Integer, Integer> stats = billEntryDAO.calculateStatistics(100);
+        assertTrue(stats.containsValue(5));
+    }
+
 }
