@@ -18,22 +18,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        /**Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        logger.error("Logger Test");
-        primaryStage.setTitle("Super Erfolgreicher Pferde Megaoutlet");
-        primaryStage.setScene(new Scene(root, 980, 750));
-        primaryStage.show();*/
-
         try{
             Service service = new SimpleService();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
             Parent root = loader.load();
             MainViewController controller = loader.getController();
-            //controller.setServicesAndFillTablesWithData(service);
-            //controller.setPrimaryStage(primaryStage);
+            controller.setServicesAndFillTablesWithData(service);
+            controller.setPrimaryStage(primaryStage);
             primaryStage.setTitle("SEPM");
             primaryStage.setMinHeight(500);
-            primaryStage.setMinWidth(750);
+            primaryStage.setMinWidth(800);
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
             logger.info("Application started.");

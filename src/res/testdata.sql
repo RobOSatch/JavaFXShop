@@ -32,7 +32,7 @@ FOREIGN KEY(FKProductID) REFERENCES Product(ProductID)
 
 INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Halfter', 39.99, 22, 'src/res/pictures/halfter.png');
 INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Kraftfutter 1kg', 49.99, 13, 'src/res/pictures/kraftfutter.png');
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Striegel', 14.99, 10, 'src/res/pictures/striegel,png');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Striegel', 14.99, 10, 'src/res/pictures/striegel.png');
 INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Sattel', 79.99, 7, 'src/res/pictures/sattel.png');
 INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Abschwitzdecke', 129.99, 9, 'src/res/pictures/abschwitzdecke.png');
 INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Zaumzeug', 69.99, 32, 'src/res/pictures/zaumzeug.png');

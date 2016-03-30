@@ -1,6 +1,8 @@
 package sepm.ss16.e1326125.service;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import sepm.ss16.e1326125.dao.BillDAO;
 import sepm.ss16.e1326125.dao.BillEntryDAO;
 import sepm.ss16.e1326125.dao.DAOException;
@@ -22,8 +24,11 @@ public class SimpleService implements Service {
     private BillDAO billDAO;
     private BillEntryDAO billEntryDAO;
     private ArrayList<BillEntry> billEntries;
+    private static final Logger logger = LogManager.getLogger(SimpleService.class);
 
     public SimpleService() throws ServiceException {
+
+        this.billEntries = new ArrayList<BillEntry>();
         try {
             this.productDAO = new JDBCProductDAO();
             this.billDAO = new JDBCBillDAO();
@@ -31,7 +36,7 @@ public class SimpleService implements Service {
         } catch (DAOException e) {
             e.printStackTrace();
         }
-        this.billEntries = new ArrayList<BillEntry>();
+        logger.debug("Service started.");
     }
 
     @Override
@@ -55,6 +60,7 @@ public class SimpleService implements Service {
     @Override
     public List<Product> listAllProducts() throws ServiceException {
         try {
+            logger.debug("Entered listAll-Method.");
             return productDAO.findAll();
         } catch (DAOException e) {
             throw new ServiceException(e.getMessage());
