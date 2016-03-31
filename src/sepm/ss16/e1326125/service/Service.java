@@ -1,6 +1,7 @@
 package sepm.ss16.e1326125.service;
 
 
+import sepm.ss16.e1326125.dao.LimitType;
 import sepm.ss16.e1326125.entity.Bill;
 import sepm.ss16.e1326125.entity.BillEntry;
 import sepm.ss16.e1326125.entity.Product;
@@ -100,51 +101,19 @@ public interface Service {
      */
     public HashMap<Integer, Integer> calculateStatisticsForOneProduct(Integer productID, Integer amountOfDays) throws ServiceException;
 
-    /**
-     * Alters the price of all the products in the specified range by percentage.
-     * @param amountOfDays
-     * @param min
-     * @param max
-     * @param percentage
-     * @param decreasePrice
-     * @throws ServiceException
-     */
-    public void alterPriceByPercentageWithMinMax(Integer amountOfDays, Integer min, Integer max, Double percentage, Boolean decreasePrice) throws ServiceException;
+    public void alterPriceByAmount(Integer amountOfDays, Double amount, Boolean decreasePrice, Integer limit, LimitType limitType) throws ServiceException;
 
-    /**
-     * Alters the price of all products in the specified frequency by percentage.
-     * @param amountOfDays
-     * @param least
-     * @param most
-     * @param percentage
-     * @param decreasePrice
-     * @throws ServiceException
-     */
-    public void alterPriceByPercentageWithFrequency(Integer amountOfDays, Integer least, Integer most, Double percentage, Boolean decreasePrice) throws ServiceException;
+    public void alterPriceByPercentage(Integer amountOfDays, Double percentage, Boolean decreasePrice, Integer limit, LimitType limitType) throws ServiceException;
 
-    /**
-     * Alters the price of all products in the specified range by amount.
-     * @param amountOfDays
-     * @param min
-     * @param max
-     * @param amount
-     * @throws ServiceException
-     */
-    public void alterPriceByAmountWithMinMax(Integer amountOfDays, Integer min, Integer max, Double amount) throws ServiceException;
-
-    /**
-     * Alters the price of all products in the specified frequency be amount.
-     * @param amountOfDays
-     * @param least
-     * @param most
-     * @param amount
-     * @throws ServiceException
-     */
-    public void alterPriceByAmountWithFrequency(Integer amountOfDays, Integer least, Integer most, Double amount) throws ServiceException;
+    Integer getAlterPriceSize(Integer amountOfDays, Integer limit, LimitType limitType) throws ServiceException;
 
     /**
      * Closes the service.
      * @throws ServiceException
      */
     public void close() throws ServiceException;
+
+    HashMap<String, Integer> getNames() throws ServiceException;
+
+    String getNameForProduct(Integer productID) throws ServiceException;
 }

@@ -30,9 +30,8 @@ public interface BillEntryDAO {
      */
     public HashMap<Integer, Integer> calculateStatistics(Integer amountOfDays) throws DAOException;
 
-    public List<Product> filterProductsByMinMax(Integer amountOfDays, Integer min, Integer max) throws DAOException;
+    public List<Product> filterProductsForAlteration(Integer amountOfDays, Integer limit, LimitType limitType) throws DAOException;
 
-    public List<Product> filterProductsByLeastMost(Integer amountOfDays, Integer least, Integer most) throws DAOException;
     /**
      * Returns a HashMap with the total amount of times a specific product has been sold in the last
      * x days. x can be specified by the user.

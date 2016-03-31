@@ -2,6 +2,7 @@ package sepm.ss16.e1326125.dao;
 
 import sepm.ss16.e1326125.entity.Product;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -52,7 +53,7 @@ public interface ProductDAO {
      * @param amount The alter amount.
      * @throws DAOException If the product is null or the price is negative after alteration.
      */
-    public void alterPriceByAmount(List<Product> product, Double amount) throws DAOException;
+    public void alterPriceByAmount(List<Product> product, Double amount, Boolean decreasePrice) throws DAOException;
 
     /**
      * Deletes a certain product.
@@ -65,4 +66,8 @@ public interface ProductDAO {
      * Closes the database connection.
      */
     public void close() throws DAOException;
+
+    HashMap<String, Integer> getNames() throws DAOException;
+
+    String getNameForProduct(Integer productID) throws DAOException;
 }

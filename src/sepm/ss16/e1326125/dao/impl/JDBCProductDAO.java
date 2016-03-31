@@ -2,7 +2,6 @@ package sepm.ss16.e1326125.dao.impl;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.h2.command.Prepared;
 import sepm.ss16.e1326125.dao.DAOException;
 import sepm.ss16.e1326125.dao.JDBCSingletonConnection;
 import sepm.ss16.e1326125.dao.ProductDAO;
@@ -15,6 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -153,21 +153,19 @@ public class JDBCProductDAO implements ProductDAO {
         logger.debug("Entering alterPrice-Method with percentage:\n{}", percentage);
 
         if (decreasePrice && percentage < 100) {
-            percentage = percentage / 100;
-        } else {
-            throw new DAOException("Price can't be negative.");
-        }
-
-        if (!decreasePrice) {
+            percentage = 1 - (percentage / 100);
+        } else if (!decreasePrice) {
             if (percentage < 100) {
                 percentage = 1 + (percentage / 100);
             }
             percentage = percentage / 100;
+        } else {
+            throw new DAOException("Price must be greater than zero.");
         }
 
         for (Product p : products) {
-            if (p.getPrice() * percentage <= 0) {
-                throw new DAOException("Price can't be negative.");
+            if (p.getPrice() * percentage < 0) {
+                throw new DAOException("Price must be greater than zero.");
             }
 
             p.setPrice(p.getPrice() * percentage);
@@ -176,8 +174,12 @@ public class JDBCProductDAO implements ProductDAO {
     }
 
     @Override
-    public void alterPriceByAmount(List<Product> products, Double amount) throws DAOException {
+    public void alterPriceByAmount(List<Product> products, Double amount, Boolean decreasePrice) throws DAOException {
         logger.debug("Entering alterPrice-Method with absolute amount:\n{}", amount);
+
+        if (decreasePrice) {
+            amount = -amount;
+        }
 
         for (Product p : products) {
             if ((p.getPrice() + amount) <= 0) {
@@ -200,6 +202,38 @@ public class JDBCProductDAO implements ProductDAO {
     @Override
     public void close() throws DAOException {
         JDBCSingletonConnection.closeConnection();
+    }
+
+    @Override
+    public HashMap<String, Integer> getNames() throws DAOException {
+        HashMap<String, Integer> result = new HashMap<String, Integer>();
+
+        try {
+            ResultSet rs = connection.createStatement().executeQuery("SELECT Name, productID FROM PRODUCT WHERE is_Deleted=false;");
+            while(rs.next()) {
+                result.put(rs.getString(1), rs.getInt(2));
+            }
+        } catch (SQLException e) {
+            throw new DAOException(e.getMessage());
+        }
+
+        return result;
+    }
+
+    @Override
+    public String getNameForProduct(Integer productID) throws DAOException {
+        String result = "";
+
+        try {
+            ResultSet rs = connection.createStatement().executeQuery("SELECT Name FROM PRODUCT WHERE is_Deleted=false AND productID = " + productID + ";");
+            while(rs.next()) {
+                result = rs.getString(1);
+            }
+        } catch (SQLException e) {
+            throw new DAOException(e.getMessage());
+        }
+
+        return result;
     }
 
     private void checkIfProductIsNull(Product product) throws DAOException {

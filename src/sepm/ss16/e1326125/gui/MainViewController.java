@@ -2,11 +2,7 @@ package sepm.ss16.e1326125.gui;
 
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,7 +37,9 @@ public class MainViewController {
 
     public void setServicesAndFillTablesWithData(Service service) throws ServiceException {
         this.service = service;
-        productsController.setServiceAndFillTableWithData(service);
+        productsController.setAndFill(service);
+        statisticsController.setService(service);
+        statisticsController.setChoices();
     }
 
     public void setPrimaryStage(Stage primaryStage){

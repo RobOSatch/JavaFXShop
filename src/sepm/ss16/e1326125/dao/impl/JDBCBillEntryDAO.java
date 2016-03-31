@@ -2,6 +2,7 @@ package sepm.ss16.e1326125.dao.impl;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import sepm.ss16.e1326125.dao.LimitType;
 import sepm.ss16.e1326125.dao.BillEntryDAO;
 import sepm.ss16.e1326125.dao.DAOException;
 import sepm.ss16.e1326125.dao.JDBCSingletonConnection;
@@ -9,10 +10,7 @@ import sepm.ss16.e1326125.entity.BillEntry;
 import sepm.ss16.e1326125.entity.Product;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class JDBCBillEntryDAO implements BillEntryDAO {
@@ -94,12 +92,23 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
         HashMap<Integer, Integer> stats = new HashMap<Integer, Integer>();
 
         ResultSet rs = null;
+        ResultSet rs1 = null;
 
         try {
             rs = connection.createStatement().executeQuery("SELECT billEntry.fkProductID, (SUM(billEntry.quantity)) AS sold_since_date FROM billEntry JOIN bill on billEntry.fkInvoiceNumber = bill.invoiceNumber where bill.issueDate > getDate() - " + amountOfDays + " group by billEntry.fkProductID order by sold_since_date desc;");
 
             while(rs.next()) {
                 stats.put(rs.getInt(1), rs.getInt(2));
+            }
+
+            String query = "SELECT productID FROM PRODUCT WHERE is_Deleted=false AND (productID <> ";
+            for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+                query += entry.getKey() + " AND productID <> ";
+            }
+            query += " 0);";
+            rs1 = connection.createStatement().executeQuery(query);
+            while (rs1.next()) {
+                stats.put(rs1.getInt(1), 0);
             }
         } catch (SQLException e) {
             throw new DAOException(e.getMessage());
@@ -108,24 +117,69 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
     }
 
     @Override
-    public List<Product> filterProductsByMinMax(Integer amountOfDays, Integer min, Integer max) throws DAOException {
+    public List<Product> filterProductsForAlteration(Integer amountOfDays, Integer limit, LimitType limitType) throws DAOException {
+        logger.debug("Enter adjustment method!");
         HashMap<Integer, Integer> stats = calculateStatistics(amountOfDays);
+        ArrayList<Product> result = new ArrayList<Product>();
+        ResultSet rs = null;
 
-        /**
-         * if-Statement um herauszufinden welcher der beiden Parameter null ist.
-         * Danach alle Values abfragen um die Result-Liste zu generieren!
-         */
-        for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+        try {
+            if (limitType == LimitType.MINIMUM) {
+                for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+                    if (entry.getValue() >= limit) {
+                        rs = connection.createStatement().executeQuery("SELECT * FROM PRODUCT WHERE productID =" + entry.getKey() + ";");
+                        while(rs.next()) {
+                            result.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getBoolean(6)));
+                        }
+                    }
+                }
+            }
 
+            if (limitType == LimitType.MAXIMUM) {
+                for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+                    if (entry.getValue() <= limit) {
+                        rs = connection.createStatement().executeQuery("SELECT * FROM PRODUCT WHERE productID =" + entry.getKey() + ";");
+                        while(rs.next()) {
+                            result.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getBoolean(6)));
+                        }
+                    }
+                }
+            }
+
+            ArrayList<Integer> keyList = new ArrayList<Integer>();
+            for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+                keyList.add(entry.getKey());
+            }
+
+            if (limitType == LimitType.LEAST) {
+                Collections.reverse(keyList);
+
+                if (limit <= keyList.size()) {
+                    for (int i = 0; i < limit; i++) {
+                        rs = connection.createStatement().executeQuery("SELECT * FROM PRODUCT WHERE productID =" + keyList.get(i));
+                        while (rs.next()) {
+                            result.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getBoolean(6)));
+                        }
+                    }
+                }
+            }
+
+            if (limitType == LimitType.MOST) {
+                if (limit <= keyList.size()) {
+                    for (int i = 0; i < limit; i++) {
+                        rs = connection.createStatement().executeQuery("SELECT * FROM PRODUCT WHERE productID =" + keyList.get(i));
+                        while (rs.next()) {
+                            result.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getBoolean(6)));
+                        }
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DAOException("Couldn't create filtered list.");
         }
-        return null;
-    }
 
-    @Override
-    public List<Product> filterProductsByLeastMost(Integer amountOfDays, Integer least, Integer most) throws DAOException {
-        return null;
+        return result;
     }
-
 
     @Override
     public HashMap<Integer, Integer> calculateStatisticsForProduct(Integer productID, Integer amountOfDays) throws DAOException {

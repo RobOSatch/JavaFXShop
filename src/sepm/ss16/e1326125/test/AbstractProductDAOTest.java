@@ -111,27 +111,4 @@ public abstract class AbstractProductDAOTest {
     public void deleteWithNonExistingIdShouldThrowException() throws DAOException {
         productDAO.delete(productWithNonExistingId);
     }
-
-    @Test (expected = DAOException.class)
-    public void alterPriceToNegativeShouldThrowException() throws DAOException {
-        Product p = productDAO.create(validProduct);
-        productDAO.alterPriceByPercentage(p, 150.00, true);
-    }
-
-    @Test
-    public void alterPriceWithPercentageShouldReturnRightResult() throws DAOException {
-        Product p = productDAO.create(validProduct);
-        productDAO.alterPriceByPercentage(p, 50.00, true);
-        assertEquals(20.00, p.getPrice());
-        productDAO.delete(p);
-    }
-
-    @Test
-    public void alterPriceWithAmountShouldReturnRightResult() throws DAOException {
-        Product p = productDAO.create(validProduct);
-        productDAO.alterPriceByAmount(p, -10.00);
-        assertEquals(30.00, p.getPrice());
-        productDAO.delete(p);
-    }
-
 }

@@ -115,7 +115,7 @@ public class ProductViewController extends MainViewController {
         logger.debug("productViewController initialized.");
     }
 
-    public void setServiceAndFillTableWithData(Service service) throws ServiceException {
+    public void setAndFill(Service service) throws ServiceException {
         this.service = service;
         priceCheckBox.setSelected(false);
         stockCheckBox.setSelected(false);

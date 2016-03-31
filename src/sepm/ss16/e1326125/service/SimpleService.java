@@ -3,10 +3,7 @@ package sepm.ss16.e1326125.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sepm.ss16.e1326125.dao.BillDAO;
-import sepm.ss16.e1326125.dao.BillEntryDAO;
-import sepm.ss16.e1326125.dao.DAOException;
-import sepm.ss16.e1326125.dao.ProductDAO;
+import sepm.ss16.e1326125.dao.*;
 import sepm.ss16.e1326125.dao.impl.JDBCBillDAO;
 import sepm.ss16.e1326125.dao.impl.JDBCBillEntryDAO;
 import sepm.ss16.e1326125.dao.impl.JDBCProductDAO;
@@ -128,27 +125,44 @@ public class SimpleService implements Service {
 
     @Override
     public HashMap<Integer, Integer> calculateStatisticsForOneProduct(Integer productID, Integer amountOfDays) throws ServiceException {
-        return calculateStatisticsForOneProduct(productID, amountOfDays);
+        try {
+            return billEntryDAO.calculateStatisticsForProduct(productID, amountOfDays);
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
     }
 
     @Override
-    public void alterPriceByPercentageWithMinMax(Integer amountOfDays, Integer min, Integer max, Double percentage, Boolean decreasePrice) throws ServiceException {
+    public void alterPriceByAmount(Integer amountOfDays, Double amount, Boolean decreasePrice, Integer limit, LimitType limitType) throws ServiceException {
+        logger.debug("Entering alterPriceByAmount-Method.");
+        List<Product> products = null;
+        try {
+            products = billEntryDAO.filterProductsForAlteration(amountOfDays, limit, limitType);
+            productDAO.alterPriceByAmount(products, amount, decreasePrice);
 
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
     }
 
     @Override
-    public void alterPriceByPercentageWithFrequency(Integer amountOfDays, Integer least, Integer most, Double percentage, Boolean decreasePrice) throws ServiceException {
-
+    public void alterPriceByPercentage(Integer amountOfDays, Double percentage, Boolean decreasePrice, Integer limit, LimitType limitType) throws ServiceException {
+        List<Product> products = null;
+        try {
+            products = billEntryDAO.filterProductsForAlteration(amountOfDays, limit, limitType);
+            productDAO.alterPriceByPercentage(products, percentage, decreasePrice);
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
     }
 
     @Override
-    public void alterPriceByAmountWithMinMax(Integer amountOfDays, Integer min, Integer max, Double amount) throws ServiceException {
-
-    }
-
-    @Override
-    public void alterPriceByAmountWithFrequency(Integer amountOfDays, Integer least, Integer most, Double amount) throws ServiceException {
-
+    public Integer getAlterPriceSize(Integer amountOfDays, Integer limit, LimitType limitType) throws ServiceException {
+        try {
+            return billEntryDAO.filterProductsForAlteration(amountOfDays, limit, limitType).size();
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
     }
 
     @Override
@@ -157,6 +171,24 @@ public class SimpleService implements Service {
             productDAO.close();
             billDAO.close();
             billEntryDAO.close();
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
+    }
+
+    @Override
+    public HashMap<String, Integer> getNames() throws ServiceException {
+        try {
+            return productDAO.getNames();
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
+    }
+
+    @Override
+    public String getNameForProduct(Integer productID) throws ServiceException {
+        try {
+            return productDAO.getNameForProduct(productID);
         } catch (DAOException e) {
             throw new ServiceException(e.getMessage());
         }
