@@ -17,9 +17,15 @@
                <items>
                   <Menu mnemonicParsing="false" text="New...">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Product" />
-                        <MenuItem mnemonicParsing="false" text="Bill" />
+                      <MenuItem mnemonicParsing="false" onAction="#onClickedNewProduct" text="Product" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickedNewBill" text="Bill" />
                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Set Theme To...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onClickedSetThemeRegular" text="Regular" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClickedSetThemeBlack" text="Black" />
+                     </items>
                   </Menu>
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#onClickedExit" text="Exit" />

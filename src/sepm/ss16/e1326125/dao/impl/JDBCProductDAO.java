@@ -8,6 +8,11 @@ import sepm.ss16.e1326125.dao.JDBCSingletonConnection;
 import sepm.ss16.e1326125.dao.ProductDAO;
 import sepm.ss16.e1326125.entity.Product;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -102,15 +107,32 @@ public class JDBCProductDAO implements ProductDAO {
         try {
             PreparedStatement updateStatement = connection.prepareStatement("UPDATE Product SET name=?, price=" + product.getPrice() + ", stock=" + product.getStock() + ", image=?, is_Deleted=" + product.getDeleted() + " WHERE productID=" + product.getProductId() + ";");
             ResultSet rs = connection.createStatement().executeQuery("SELECT* FROM Product WHERE productId=" + product.getProductId() + ";");
+
             if (!rs.next()) {
                 logger.debug("Product with id {} doesn't exist.", product.getProductId());
                 throw new DAOException("Product with id " + product.getProductId() + " doesn't exist.");
             }
 
+            File file = new File(product.getImage());
+            Integer index = file.getName().lastIndexOf('.');
+            String extension = "";
+
+            if (index >= 0) {
+                extension = file.getName().substring(index+1);
+            }
+
+            String image = "src/res/pictures/" + product.getProductId() + "." + extension;
             updateStatement.setString(1, product.getName());
-            updateStatement.setString(2, product.getImage());
+            updateStatement.setString(2, image);
             updateStatement.executeUpdate();
+
+            File destination = new File(image);
+            CopyOption[] options = new CopyOption[]{StandardCopyOption.REPLACE_EXISTING};
+            Files.copy(file.toPath(), destination.toPath(), options);
+
             connection.commit();
+
+            product.setImage(image);
             logger.debug("Successfully updated product in the table Product:\n{}", product);
         } catch (SQLException ex) {
             logger.debug(ex.getMessage());
@@ -121,14 +143,14 @@ public class JDBCProductDAO implements ProductDAO {
                 throw new DAOException((e.getMessage()));
             }
             throw new DAOException(ex.getMessage());
+        } catch (IOException ex) {
+            throw new DAOException(ex.getMessage());
         }
     }
 
     @Override
-    public void alterPriceByPercentage(Product product, Double percentage, Boolean decreasePrice) throws DAOException {
+    public void alterPriceByPercentage(List<Product> products, Double percentage, Boolean decreasePrice) throws DAOException {
         logger.debug("Entering alterPrice-Method with percentage:\n{}", percentage);
-
-        checkIfProductIsNull(product);
 
         if (decreasePrice && percentage < 100) {
             percentage = percentage / 100;
@@ -143,26 +165,28 @@ public class JDBCProductDAO implements ProductDAO {
             percentage = percentage / 100;
         }
 
-        if (product.getPrice() * percentage <= 0) {
-            throw new DAOException("Price can't be negative.");
-        }
+        for (Product p : products) {
+            if (p.getPrice() * percentage <= 0) {
+                throw new DAOException("Price can't be negative.");
+            }
 
-        product.setPrice(product.getPrice() * percentage);
-        update(product);
+            p.setPrice(p.getPrice() * percentage);
+            update(p);
+        }
     }
 
     @Override
-    public void alterPriceByAmount(Product product, Double amount) throws DAOException {
+    public void alterPriceByAmount(List<Product> products, Double amount) throws DAOException {
         logger.debug("Entering alterPrice-Method with absolute amount:\n{}", amount);
 
-        checkIfProductIsNull(product);
+        for (Product p : products) {
+            if ((p.getPrice() + amount) <= 0) {
+                throw new DAOException("Price can't be null.");
+            }
 
-        if ((product.getPrice() + amount) <= 0) {
-            throw new DAOException("Price can't be null.");
+            p.setPrice(p.getPrice() + amount);
+            update(p);
         }
-
-        product.setPrice(product.getPrice() + amount);
-        update(product);
     }
 
     @Override

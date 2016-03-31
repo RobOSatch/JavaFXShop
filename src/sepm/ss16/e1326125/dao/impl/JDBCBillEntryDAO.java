@@ -96,7 +96,7 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
         ResultSet rs = null;
 
         try {
-            rs = connection.createStatement().executeQuery("SELECT billEntry.fkProductID, (SUM(billEntry.quantity)) AS sold_since_date FROM billEntry JOIN bill on billEntry.fkInvoiceNumber = bill.invoiceNumber where bill.issueDate > getDate() - " + amountOfDays + " group by billEntry.fkProductID;");
+            rs = connection.createStatement().executeQuery("SELECT billEntry.fkProductID, (SUM(billEntry.quantity)) AS sold_since_date FROM billEntry JOIN bill on billEntry.fkInvoiceNumber = bill.invoiceNumber where bill.issueDate > getDate() - " + amountOfDays + " group by billEntry.fkProductID order by sold_since_date desc;");
 
             while(rs.next()) {
                 stats.put(rs.getInt(1), rs.getInt(2));
@@ -106,6 +106,26 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
         }
         return stats;
     }
+
+    @Override
+    public List<Product> filterProductsByMinMax(Integer amountOfDays, Integer min, Integer max) throws DAOException {
+        HashMap<Integer, Integer> stats = calculateStatistics(amountOfDays);
+
+        /**
+         * if-Statement um herauszufinden welcher der beiden Parameter null ist.
+         * Danach alle Values abfragen um die Result-Liste zu generieren!
+         */
+        for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+
+        }
+        return null;
+    }
+
+    @Override
+    public List<Product> filterProductsByLeastMost(Integer amountOfDays, Integer least, Integer most) throws DAOException {
+        return null;
+    }
+
 
     @Override
     public HashMap<Integer, Integer> calculateStatisticsForProduct(Integer productID, Integer amountOfDays) throws DAOException {

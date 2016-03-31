@@ -1,6 +1,7 @@
 package sepm.ss16.e1326125.gui;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -11,10 +12,14 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -232,4 +237,63 @@ public class ProductViewController extends MainViewController {
         }
     }
 
+    @FXML
+    public void onClickedEditProduct() {
+        try {
+            openEditWindow();
+        } catch (IOException e) {
+            fxDialog("Edit Product", "ERROR", "Can't open edit window.", Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    public void onClickedPriceAdjustment() {
+        try {
+            openPriceAdjustmentWindow();
+        } catch (IOException e) {
+            fxDialog("Price Adjustment", "ERROR", "Can't open price adjustment window.", Alert.AlertType.ERROR);
+        }
+    }
+
+    public void openEditWindow() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductEditView.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(primaryStage);
+        stage.setScene(scene);
+        ProductEditViewController controller = loader.getController();
+        controller.setControllerAndStage(this, stage);
+        stage.showAndWait();
+    }
+
+    public void openCreateWindow() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ProductNewView.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(primaryStage);
+        stage.setScene(scene);
+        ProductNewViewController controller = loader.getController();
+        controller.setControllerAndStage(this, stage);
+        stage.showAndWait();
+    }
+
+    public void openPriceAdjustmentWindow() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PriceAdjustmentView.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(primaryStage);
+        stage.setScene(scene);
+        PriceAdjustmentViewController controller = loader.getController();
+        controller.setControllerAndStage(this, stage);
+        stage.showAndWait();
+    }
 }

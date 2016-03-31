@@ -30,13 +30,13 @@ FOREIGN KEY(FKInvoiceNumber) REFERENCES Bill(InvoiceNumber),
 FOREIGN KEY(FKProductID) REFERENCES Product(ProductID)
 );
 
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Halfter', 39.99, 22, 'src/res/pictures/halfter.png');
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Kraftfutter 1kg', 49.99, 13, 'src/res/pictures/kraftfutter.png');
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Striegel', 14.99, 10, 'src/res/pictures/striegel.png');
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Sattel', 79.99, 7, 'src/res/pictures/sattel.png');
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Abschwitzdecke', 129.99, 9, 'src/res/pictures/abschwitzdecke.png');
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Zaumzeug', 69.99, 32, 'src/res/pictures/zaumzeug.png');
-INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Mähnenkamm', 34.99, 56, 'src/res/pictures/maehnenkamm');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Halfter', 39.99, 22, 'src/res/pictures/1.png');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Kraftfutter 1kg', 49.99, 13, 'src/res/pictures/2.png');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Striegel', 14.99, 10, 'src/res/pictures/3.png');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Sattel', 79.99, 7, 'src/res/pictures/4.png');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Abschwitzdecke', 129.99, 9, 'src/res/pictures/5.png');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Zaumzeug', 69.99, 32, 'src/res/pictures/6.png');
+INSERT INTO Product (Name, Price, Stock, Image) VALUES ('Mähnenkamm', 34.99, 56, 'src/res/pictures/7.png');
 
 INSERT INTO Bill (Issuedate, BillRecipient, BillText) VALUES ('2016-03-24', 'Nathalie Stürzenbecher', 'Kein Kommentar');
 INSERT INTO Bill (Issuedate, BillRecipient, BillText) VALUES ('2016-02-07', 'Robert Barta', 'Kein Kommentar');

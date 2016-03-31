@@ -2,17 +2,21 @@ package sepm.ss16.e1326125.gui;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sepm.ss16.e1326125.service.Service;
 import sepm.ss16.e1326125.service.ServiceException;
 
+import java.io.IOException;
 import java.util.Optional;
 
-public class MainViewController<T> {
+public class MainViewController {
 
     public final String DOUBLE_REGEX ="(?:\\d*\\.)?\\d+";
     public final String INT_REGEX="\\d+";
@@ -25,11 +29,11 @@ public class MainViewController<T> {
     @FXML
     private ProductViewController productsController;
     @FXML
-    private BillViewController billViewController;
+    private BillViewController billsController;
     @FXML
-    private StatisticsViewController statisticsViewController;
+    private StatisticsViewController statisticsController;
     @FXML
-    private BillEntryViewController billEntryViewController;
+    private BillEntryViewController billEntriesController;
 
     public void initialize() {
         logger.debug("MainViewController initialized.");
@@ -81,5 +85,31 @@ public class MainViewController<T> {
         fxDialog("About", "", "Super Erfolgreicher Pferde Megaoutlet \n " +
                 "Version 1.0 (Beta)\n" +
                 "Robert Barta (1326125)", Alert.AlertType.INFORMATION);
+    }
+
+    @FXML
+    public void onClickedNewProduct() {
+        try {
+            productsController.openCreateWindow();
+        } catch (IOException e) {
+            fxDialog("Creating Product", "ERROR", e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    public void onClickedNewBill() {
+
+    }
+
+    @FXML
+    public void onClickedSetThemeRegular() {
+        primaryStage.getScene().getStylesheets().remove("res/stylesheet_black.css");
+        primaryStage.getScene().getStylesheets().add("res/modena.css");
+    }
+
+    @FXML
+    public void onClickedSetThemeBlack() {
+        primaryStage.getScene().getStylesheets().remove("res/modena.css");
+        primaryStage.getScene().getStylesheets().add("res/stylesheet_black.css");
     }
 }

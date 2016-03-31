@@ -44,7 +44,7 @@ public interface ProductDAO {
      * @param percentage The alter percentage.
      * @throws DAOException If the product is null or the price is negative after alteration.
      */
-    public void alterPriceByPercentage(Product product, Double percentage, Boolean decreasePrice) throws DAOException;
+    public void alterPriceByPercentage(List<Product> product, Double percentage, Boolean decreasePrice) throws DAOException;
 
     /**
      * Alters the price of a product by the specified amount.
@@ -52,7 +52,7 @@ public interface ProductDAO {
      * @param amount The alter amount.
      * @throws DAOException If the product is null or the price is negative after alteration.
      */
-    public void alterPriceByAmount(Product product, Double amount) throws DAOException;
+    public void alterPriceByAmount(List<Product> product, Double amount) throws DAOException;
 
     /**
      * Deletes a certain product.
