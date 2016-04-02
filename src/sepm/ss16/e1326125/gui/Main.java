@@ -25,7 +25,7 @@ public class Main extends Application {
             MainViewController controller = loader.getController();
             controller.setServicesAndFillTablesWithData(service);
             controller.setPrimaryStage(primaryStage);
-            primaryStage.setTitle("SEPM");
+            primaryStage.setTitle("Super Erfolgreicher Pferde Megaoutlet");
             primaryStage.setMinHeight(500);
             primaryStage.setMinWidth(800);
             primaryStage.setScene(new Scene(root));

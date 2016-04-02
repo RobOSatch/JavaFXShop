@@ -42,7 +42,7 @@
          <children>
             <TabPane fx:id="tabPane" prefHeight="471.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab closable="false" text="Products">
+                <Tab fx:id="productsTab" closable="false" text="Products">
                     <content>
                         <fx:include fx:id="products" source="ProductView.fxml" />
                     </content>

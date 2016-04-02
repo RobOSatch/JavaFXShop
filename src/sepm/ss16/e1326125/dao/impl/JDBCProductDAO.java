@@ -155,10 +155,7 @@ public class JDBCProductDAO implements ProductDAO {
         if (decreasePrice && percentage < 100) {
             percentage = 1 - (percentage / 100);
         } else if (!decreasePrice) {
-            if (percentage < 100) {
                 percentage = 1 + (percentage / 100);
-            }
-            percentage = percentage / 100;
         } else {
             throw new DAOException("Price must be greater than zero.");
         }

@@ -79,7 +79,7 @@ public class JDBCBillDAO implements BillDAO {
         ArrayList<Bill> result = new ArrayList<Bill>();
 
         try {
-            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM Bill WHERE IssueDate BETWEEN " + from.getIssueDate() + " AND " + to.getIssueDate() + ";");
+            ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM Bill WHERE IssueDate BETWEEN '" + from.getIssueDate() + "' AND '" + to.getIssueDate() + "';");
             while (rs.next()) {
                 result.add(new Bill(rs.getInt(1), rs.getDate(2), rs.getString(3), rs.getString(4), rs.getString(5)));
                 logger.debug("Entry added to list.");

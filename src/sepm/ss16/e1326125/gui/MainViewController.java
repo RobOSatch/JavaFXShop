@@ -1,6 +1,8 @@
 package sepm.ss16.e1326125.gui;
 
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -29,15 +31,27 @@ public class MainViewController {
     @FXML
     private StatisticsViewController statisticsController;
     @FXML
-    private BillEntryViewController billEntriesController;
+    private Tab productsTab;
 
     public void initialize() {
-        logger.debug("MainViewController initialized.");
-    }
+        tabPane.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>() {
+            @Override
+            public void changed(ObservableValue<? extends Tab> observable, Tab oldTab, Tab newTab) {
+                if(newTab == productsTab) {
+                    try {
+                        productsController.setAndFill(service);
+                    } catch (ServiceException e) {
+                        fxDialog("MainView", "ERROR", "Failed to update", Alert.AlertType.ERROR);
+                    }
+                }
+             }
+        });
+        }
 
     public void setServicesAndFillTablesWithData(Service service) throws ServiceException {
         this.service = service;
         productsController.setAndFill(service);
+        billsController.setAndFill(service);
         statisticsController.setService(service);
         statisticsController.setChoices();
     }
@@ -45,7 +59,7 @@ public class MainViewController {
     public void setPrimaryStage(Stage primaryStage){
         this.primaryStage = primaryStage;
         productsController.setPrimaryStage(primaryStage);
-        //billViewController.setPrimaryStage(primaryStage);
+        billsController.setPrimaryStage(primaryStage);
     }
 
     public Optional fxDialog(String title, String header, String content, Alert.AlertType alertType){
@@ -96,7 +110,14 @@ public class MainViewController {
 
     @FXML
     public void onClickedNewBill() {
-
+        try {
+            billsController.openCreateWindow();
+            productsController.setAndFill(service);
+        } catch (IOException e) {
+            fxDialog("Creating Bill", "ERROR", e.getMessage(), Alert.AlertType.ERROR);
+        } catch (ServiceException ex) {
+            fxDialog("Creating Bill", "ERROR", ex.getMessage(), Alert.AlertType.ERROR);
+        }
     }
 
     @FXML

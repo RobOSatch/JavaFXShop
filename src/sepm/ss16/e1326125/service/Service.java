@@ -76,13 +76,9 @@ public interface Service {
 
     /**
      * Adds a new BillEntry to a bill.
-     * @param bill The bill in which the entry should occur.
-     * @param product The product to be added.
-     * @param quantity The quantity of the product.
-     * @return The new bill entry.
      * @throws ServiceException If one of the parameters is null.
      */
-    public BillEntry addProductToBill(Bill bill, Product product, Integer quantity) throws ServiceException;
+    public void addProductsToBill(List<BillEntry> entries) throws ServiceException;
 
     /**
      * Calculates the statistics for all the products.
@@ -116,4 +112,8 @@ public interface Service {
     HashMap<String, Integer> getNames() throws ServiceException;
 
     String getNameForProduct(Integer productID) throws ServiceException;
+
+    List<BillEntry> getEntriesForBill(Integer billNumber) throws ServiceException;
+
+    Product getProductForId(Integer productId) throws ServiceException;
 }

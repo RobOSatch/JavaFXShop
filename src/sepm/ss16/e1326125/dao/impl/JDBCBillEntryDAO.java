@@ -89,7 +89,7 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
     @Override
     public HashMap<Integer, Integer> calculateStatistics(Integer amountOfDays) throws DAOException {
 
-        HashMap<Integer, Integer> stats = new HashMap<Integer, Integer>();
+        LinkedHashMap<Integer, Integer> stats = new LinkedHashMap<Integer, Integer>();
 
         ResultSet rs = null;
         ResultSet rs1 = null;
@@ -120,6 +120,7 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
     public List<Product> filterProductsForAlteration(Integer amountOfDays, Integer limit, LimitType limitType) throws DAOException {
         logger.debug("Enter adjustment method!");
         HashMap<Integer, Integer> stats = calculateStatistics(amountOfDays);
+        System.out.println(stats.toString());
         ArrayList<Product> result = new ArrayList<Product>();
         ResultSet rs = null;
 

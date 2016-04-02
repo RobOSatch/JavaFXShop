@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -37,7 +38,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <VBox alignment="CENTER" layoutX="469.0" layoutY="27.0" prefHeight="150.0" prefWidth="187.0" style="-fx-background-color: lightgrey; -fx-border-color: grey; -fx-background-radius: 10px; -fx-border-radius: 10px;">
+      <VBox alignment="CENTER" layoutX="469.0" layoutY="12.0" prefHeight="150.0" prefWidth="187.0" style="-fx-background-color: lightgrey; -fx-border-color: grey; -fx-background-radius: 10px; -fx-border-radius: 10px;">
          <children>
             <ImageView fx:id="productImage" fitHeight="138.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true" />
          </children>
@@ -45,7 +46,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </VBox>
-      <VBox layoutX="444.0" layoutY="191.0" style="-fx-border-color: lightgrey; -fx-border-radius: 10px; -fx-background-radius: 10px;">
+      <VBox layoutX="444.0" layoutY="175.0" style="-fx-border-color: lightgrey; -fx-border-radius: 10px; -fx-background-radius: 10px;">
          <children>
             <Group>
                <children>
@@ -96,5 +97,6 @@
          </children>
       </HBox>
       <Button fx:id="productListAllButton" layoutX="502.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickedListAllProducts" prefHeight="27.0" prefWidth="125.0" text="List All" />
+      <Separator layoutX="367.0" layoutY="348.0" prefHeight="3.0" prefWidth="395.0" />
    </children>
 </AnchorPane>

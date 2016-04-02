@@ -20,12 +20,12 @@ public class SimpleService implements Service {
     private ProductDAO productDAO;
     private BillDAO billDAO;
     private BillEntryDAO billEntryDAO;
-    private ArrayList<BillEntry> billEntries;
+    private HashMap<Bill, Product> billEntries;
     private static final Logger logger = LogManager.getLogger(SimpleService.class);
 
     public SimpleService() throws ServiceException {
 
-        this.billEntries = new ArrayList<BillEntry>();
+        this.billEntries = new HashMap<Bill, Product>();
         try {
             this.productDAO = new JDBCProductDAO();
             this.billDAO = new JDBCBillDAO();
@@ -110,8 +110,12 @@ public class SimpleService implements Service {
     }
 
     @Override
-    public BillEntry addProductToBill(Bill bill, Product product, Integer quantity) throws ServiceException {
-        return null;
+    public void addProductsToBill(List<BillEntry> entries) throws ServiceException {
+        try {
+            billEntryDAO.create(entries);
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
     }
 
     @Override
@@ -159,7 +163,16 @@ public class SimpleService implements Service {
     @Override
     public Integer getAlterPriceSize(Integer amountOfDays, Integer limit, LimitType limitType) throws ServiceException {
         try {
-            return billEntryDAO.filterProductsForAlteration(amountOfDays, limit, limitType).size();
+            if (limitType == LimitType.LEAST || limitType == LimitType.MOST) {
+                if (limit > productDAO.findAll().size()) {
+                    throw new DAOException("Limit can't be greater than the total amount of products.");
+                } else {
+                    return billEntryDAO.filterProductsForAlteration(amountOfDays, limit, limitType).size();
+                }
+            } else {
+                return billEntryDAO.filterProductsForAlteration(amountOfDays, limit, limitType).size();
+            }
+
         } catch (DAOException e) {
             throw new ServiceException(e.getMessage());
         }
@@ -192,5 +205,30 @@ public class SimpleService implements Service {
         } catch (DAOException e) {
             throw new ServiceException(e.getMessage());
         }
+    }
+
+    @Override
+    public List<BillEntry> getEntriesForBill(Integer billNumber) throws ServiceException {
+        try {
+            return billEntryDAO.filterByBill(billNumber);
+        } catch (DAOException e) {
+            throw new ServiceException(e.getMessage());
+        }
+    }
+
+    @Override
+    public Product getProductForId(Integer productId) throws ServiceException {
+        Product result = null;
+        try {
+            List<Product> list = productDAO.findAll();
+            for (Product p : list) {
+                if (p.getProductId() == productId) {
+                    return p;
+                }
+            }
+        } catch (DAOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
