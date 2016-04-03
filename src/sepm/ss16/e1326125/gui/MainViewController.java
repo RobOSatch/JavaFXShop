@@ -48,7 +48,7 @@ public class MainViewController {
         });
         }
 
-    public void setServicesAndFillTablesWithData(Service service) throws ServiceException {
+    public void setAndFill(Service service) throws ServiceException {
         this.service = service;
         productsController.setAndFill(service);
         billsController.setAndFill(service);

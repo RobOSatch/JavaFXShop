@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/10.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/16.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/8.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/9.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/9.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainViewController.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainViewController.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,18 +79,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PriceAdjustmentViewController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/PriceAdjustmentViewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SimpleService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -129,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Service.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26367188">
-              <caret line="104" column="78" selection-start-line="104" selection-start-column="78" selection-end-line="104" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="113" column="59" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -153,17 +123,7 @@
         <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JDBCBillEntryDAOTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/JDBCBillEntryDAOTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -185,12 +145,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleServiceTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/SimpleServiceTest.java">
+      <file leaf-file-name="MainViewController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainViewController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainView.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.981132">
+              <caret line="11" column="167" selection-start-line="11" selection-start-column="167" selection-end-line="11" selection-end-column="167" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7949219">
+              <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1650#1651#0" expanded="true" />
+                <element signature="e#1678#1679#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -254,7 +241,6 @@
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCProductDAO.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillOpenViewController.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillDAO.java" />
-        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillCreateView.fxml" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillOpenView.fxml" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillView.fxml" />
@@ -272,6 +258,7 @@
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java" />
         <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java" />
+        <option value="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" />
       </list>
     </option>
   </component>
@@ -1011,7 +998,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459719209294</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="FINAL RELEASE: added missing resources">
+      <created>1459719966265</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1459719966265</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1051,7 +1044,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="833" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1063,7 +1056,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29319373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930556" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930556" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1106,7 +1099,8 @@
     <MESSAGE value="major parts of GUI added, including:&#10;- Price adjustment added&#10;- Statistics + bug fixes&#10;&#10;TODO:&#10;- Fix bug, which selects wrong products in priceAdjustment" />
     <MESSAGE value="implementing rest of funcionalities and bug fixes.&#10;&#10;TODO:&#10;- Bug Fixes and some exception handling&#10;- JUnit Tests for Service" />
     <MESSAGE value="FINAL RELEASE:&#10;- cleaned up project&#10;- completed JavaDoc&#10;- completed test data" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINAL RELEASE:&#10;- cleaned up project&#10;- completed JavaDoc&#10;- completed test data" />
+    <MESSAGE value="FINAL RELEASE: added missing resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINAL RELEASE: added missing resources" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1322,16 +1316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillCreateView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.3962264">
@@ -1358,17 +1342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.6792452">
           <caret line="13" column="173" selection-start-line="13" selection-start-column="173" selection-end-line="13" selection-end-column="173" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainView.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1132076">
-          <caret line="11" column="167" selection-start-line="11" selection-start-column="167" selection-end-line="11" selection-end-column="167" />
           <folding />
         </state>
       </provider>
@@ -1439,14 +1412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillCreateViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1473,14 +1438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="237" column="94" selection-start-line="237" selection-start-column="94" selection-end-line="237" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1559,9 +1516,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26367188">
-          <caret line="104" column="78" selection-start-line="104" selection-start-column="78" selection-end-line="104" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="59" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractBillEntryDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainView.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.981132">
+          <caret line="11" column="167" selection-start-line="11" selection-start-column="167" selection-end-line="11" selection-end-column="167" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7949219">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+            <element signature="e#1678#1679#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

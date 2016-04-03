@@ -23,7 +23,7 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
             Parent root = loader.load();
             MainViewController controller = loader.getController();
-            controller.setServicesAndFillTablesWithData(service);
+            controller.setAndFill(service);
             controller.setPrimaryStage(primaryStage);
             primaryStage.setTitle("Super Erfolgreicher Pferde Megaoutlet");
             primaryStage.setMinHeight(500);
