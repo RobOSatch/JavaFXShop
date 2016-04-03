@@ -2,25 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/AbstractServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/test/SimpleServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/gui/Main.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/gui/Main.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/10.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/6.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/8.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/9.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/pictures/9.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.class" afterPath="$PROJECT_DIR$/out/production/sepm_einzelbeispiel/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/dao/impl/JDBCBillEntryDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillCreateView.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillCreateView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillCreateViewController.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillCreateViewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillOpenView.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillOpenView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillView.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillViewController.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/BillViewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainView.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainViewController.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/MainViewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/ProductNewView.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/ProductNewView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/ProductView.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/ProductView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/StatisticsView.fxml" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/StatisticsView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/StatisticsViewController.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/gui/StatisticsViewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/Service.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java" afterPath="$PROJECT_DIR$/src/sepm/ss16/e1326125/service/SimpleService.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1003,7 +1005,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459638278605</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="FINAL RELEASE:&#10;- cleaned up project&#10;- completed JavaDoc&#10;- completed test data">
+      <created>1459719209294</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1459719209294</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1043,7 +1051,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="833" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1055,7 +1063,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29319373" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930556" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930556" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1097,7 +1105,8 @@
     <MESSAGE value="major parts of GUI added, including:&#10;- FileChooser and Image saving to database&#10;- Edit and New&#10;- Skin chooser added" />
     <MESSAGE value="major parts of GUI added, including:&#10;- Price adjustment added&#10;- Statistics + bug fixes&#10;&#10;TODO:&#10;- Fix bug, which selects wrong products in priceAdjustment" />
     <MESSAGE value="implementing rest of funcionalities and bug fixes.&#10;&#10;TODO:&#10;- Bug Fixes and some exception handling&#10;- JUnit Tests for Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementing rest of funcionalities and bug fixes.&#10;&#10;TODO:&#10;- Bug Fixes and some exception handling&#10;- JUnit Tests for Service" />
+    <MESSAGE value="FINAL RELEASE:&#10;- cleaned up project&#10;- completed JavaDoc&#10;- completed test data" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINAL RELEASE:&#10;- cleaned up project&#10;- completed JavaDoc&#10;- completed test data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
