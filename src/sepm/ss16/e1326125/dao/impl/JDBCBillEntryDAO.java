@@ -28,7 +28,6 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
         logger.debug("Entering create-Method with parameters", billEntries);
 
         if (billEntries == null) {
-            logger.debug("List is null.");
             throw new DAOException("List can't be null.");
         }
 
@@ -88,32 +87,38 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
 
     @Override
     public HashMap<Integer, Integer> calculateStatistics(Integer amountOfDays) throws DAOException {
+        if (amountOfDays == null) {
+            throw new DAOException("Amount of days can't be null.");
+        } else if (amountOfDays <= 0) {
+            throw new DAOException("Amount of days can't be negative or equal to zero.");
+        } else {
+            LinkedHashMap<Integer, Integer> stats = new LinkedHashMap<Integer, Integer>();
 
-        LinkedHashMap<Integer, Integer> stats = new LinkedHashMap<Integer, Integer>();
+            ResultSet rs = null;
+            ResultSet rs1 = null;
 
-        ResultSet rs = null;
-        ResultSet rs1 = null;
+            try {
+                rs = connection.createStatement().executeQuery("SELECT billEntry.fkProductID, (SUM(billEntry.quantity)) AS sold_since_date FROM billEntry JOIN bill on billEntry.fkInvoiceNumber = bill.invoiceNumber where bill.issueDate > getDate() - " + amountOfDays + " group by billEntry.fkProductID order by sold_since_date desc;");
 
-        try {
-            rs = connection.createStatement().executeQuery("SELECT billEntry.fkProductID, (SUM(billEntry.quantity)) AS sold_since_date FROM billEntry JOIN bill on billEntry.fkInvoiceNumber = bill.invoiceNumber where bill.issueDate > getDate() - " + amountOfDays + " group by billEntry.fkProductID order by sold_since_date desc;");
+                while (rs.next()) {
+                    stats.put(rs.getInt(1), rs.getInt(2));
+                }
 
-            while(rs.next()) {
-                stats.put(rs.getInt(1), rs.getInt(2));
+                String query = "SELECT productID FROM PRODUCT WHERE is_Deleted=false AND (productID <> ";
+                for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+                    query += entry.getKey() + " AND productID <> ";
+                }
+                query += " 0);";
+                rs1 = connection.createStatement().executeQuery(query);
+                while (rs1.next()) {
+                    stats.put(rs1.getInt(1), 0);
+                }
+            } catch (SQLException e) {
+                throw new DAOException(e.getMessage());
             }
 
-            String query = "SELECT productID FROM PRODUCT WHERE is_Deleted=false AND (productID <> ";
-            for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
-                query += entry.getKey() + " AND productID <> ";
-            }
-            query += " 0);";
-            rs1 = connection.createStatement().executeQuery(query);
-            while (rs1.next()) {
-                stats.put(rs1.getInt(1), 0);
-            }
-        } catch (SQLException e) {
-            throw new DAOException(e.getMessage());
+            return stats;
         }
-        return stats;
     }
 
     @Override
@@ -184,12 +189,17 @@ public class JDBCBillEntryDAO implements BillEntryDAO {
 
     @Override
     public HashMap<Integer, Integer> calculateStatisticsForProduct(Integer productID, Integer amountOfDays) throws DAOException {
+        logger.debug("Entering calculateStatisticsForOneProduct-Method with parameters: {} and {}", productID, amountOfDays);
         HashMap<Integer, Integer> stats = calculateStatistics(amountOfDays);
         HashMap<Integer, Integer> result = new HashMap<Integer, Integer>();
 
-        for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
-            if (entry.getKey() == productID) {
-                result.put(entry.getKey(), entry.getValue());
+        if (!stats.containsKey(productID)) {
+            throw new DAOException("No such Id: " + productID);
+        } else {
+            for (Map.Entry<Integer, Integer> entry : stats.entrySet()) {
+                if (entry.getKey() == productID) {
+                    result.put(entry.getKey(), entry.getValue());
+                }
             }
         }
         return result;

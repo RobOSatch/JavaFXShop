@@ -101,24 +101,27 @@ public class BillCreateViewController {
 
     @FXML
     void onClickedAdd() {
-        selectionIsValid(selectProductTable);
-        Product toAdd = selectProductTable.getSelectionModel().getSelectedItem();
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Add Item");
-        dialog.setHeaderText("Enter quantity");
-        dialog.setContentText("");
+        if (!selectionIsValid(selectProductTable)) {
+            billsController.fxDialog("Create Bill", "ERROR", "Nothing selected.", Alert.AlertType.ERROR);
+        } else {
+            Product toAdd = selectProductTable.getSelectionModel().getSelectedItem();
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Add Item");
+            dialog.setHeaderText("Enter quantity");
+            dialog.setContentText("");
 
-        Optional<String> result = dialog.showAndWait();
-        if (result.get() != null) {
-            if (result.get().matches(billsController.INT_REGEX)) {
-                if (Integer.valueOf(result.get()) > 0 && Integer.valueOf(result.get()) <= toAdd.getStock()) {
-                    toAddProductTable.getItems().add(new BillEntry(null, null, toAdd.getProductId(), toAdd.getName(), toAdd.getPrice(), Integer.valueOf(result.get())));
-                    selectProductTable.getItems().remove(toAdd);
+            Optional<String> result = dialog.showAndWait();
+            if (result.get() != null) {
+                if (result.get().matches(billsController.INT_REGEX)) {
+                    if (Integer.valueOf(result.get()) > 0 && Integer.valueOf(result.get()) <= toAdd.getStock()) {
+                        toAddProductTable.getItems().add(new BillEntry(null, null, toAdd.getProductId(), toAdd.getName(), toAdd.getPrice(), Integer.valueOf(result.get())));
+                        selectProductTable.getItems().remove(toAdd);
+                    } else {
+                        billsController.fxDialog("Create Bill", "Invalid Input", "Quantity can't be greater than available quantity.", Alert.AlertType.ERROR);
+                    }
                 } else {
-                    billsController.fxDialog("Create Bill", "Invalid Input", "Quantity can't be greater than available quantity.", Alert.AlertType.ERROR);
+                    billsController.fxDialog("Create Bill", "Invalid Input", "Quantity must be positive integer.", Alert.AlertType.ERROR);
                 }
-            } else {
-                billsController.fxDialog("Create Bill", "Invalid Input", "Quantity must be positive integer.", Alert.AlertType.ERROR);
             }
         }
         toggleButtons();
@@ -131,42 +134,54 @@ public class BillCreateViewController {
 
     @FXML
     void onClickedCreate() {
-        String firstName = firstNameTextField.getText();
-        String lastName = lastNameTextField.getText();
-        String paymentMethod = paymentChoiceBox.getValue();
+        if (!textIsValid()) {
+            billsController.fxDialog("Create Bill", "Invalid Input", "Names can only consist of letters and mustn't contain spaces.", Alert.AlertType.ERROR);
+        } else if (toAddProductTable.getItems().isEmpty()) {
+            billsController.fxDialog("Create Bill", "Missing Items", "List of items can't be empty.", Alert.AlertType.ERROR);
+        } else {
+            String firstName = firstNameTextField.getText();
+            String lastName = lastNameTextField.getText();
+            String paymentMethod = paymentChoiceBox.getValue();
 
-        Bill bill = new Bill(null, null, firstName, lastName, paymentMethod);
-        List<BillEntry> billEntries = new ArrayList<BillEntry>();
+            Bill bill = new Bill(null, null, firstName, lastName, paymentMethod);
+            List<BillEntry> billEntries = new ArrayList<BillEntry>();
 
-        try {
-            service.newBill(bill);
+            try {
+                service.newBill(bill);
 
-            List<BillEntry> entries = toAddProductTable.getItems();
+                List<BillEntry> entries = toAddProductTable.getItems();
 
-            for (BillEntry entry : entries) {
-                billEntries.add(new BillEntry(null, bill.getInvoiceNumber(), entry.getFkProductId(), entry.getProductName(), entry.getProductPrice(), entry.getQuantity()));
-                Product p = service.getProductForId(entry.getFkProductId());
-                p.setStock(p.getStock() - entry.getQuantity());
-                service.editProduct(p);
+                for (BillEntry entry : entries) {
+                    billEntries.add(new BillEntry(null, bill.getInvoiceNumber(), entry.getFkProductId(), entry.getProductName(), entry.getProductPrice(), entry.getQuantity()));
+                    Product p = service.getProductForId(entry.getFkProductId());
+                    p.setStock(p.getStock() - entry.getQuantity());
+                    service.editProduct(p);
+                }
+
+                service.addProductsToBill(billEntries);
+                billsController.setAndFill(service);
+                stage.close();
+                billsController.fxDialog("Create Bill", "", "Bill was created successfully", Alert.AlertType.INFORMATION);
+            } catch (ServiceException e) {
+                billsController.fxDialog("Create Bill", "ERROR", e.getMessage(), Alert.AlertType.ERROR);
             }
-
-            service.addProductsToBill(billEntries);
-            stage.close();
-        } catch (ServiceException e) {
-            billsController.fxDialog("Create Bill", "ERROR", e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
     @FXML
     void onClickedRemove() {
-        selectionIsValid(toAddProductTable);
-        try {
-            Product toRemove = service.getProductForId(toAddProductTable.getSelectionModel().getSelectedItem().getFkProductId());
-            selectProductTable.getItems().add(toRemove);
-            toAddProductTable.getItems().remove(toAddProductTable.getSelectionModel().getSelectedItem());
+        if (!selectionIsValid(toAddProductTable)) {
+            billsController.fxDialog("Create Bill", "ERROR", "Nothing selected.", Alert.AlertType.ERROR);
+        } else {
+            try {
+                Product toRemove = service.getProductForId(toAddProductTable.getSelectionModel().getSelectedItem().getFkProductId());
+                selectProductTable.getItems().add(toRemove);
+                toAddProductTable.getItems().remove(toAddProductTable.getSelectionModel().getSelectedItem());
 
-            toggleButtons();
-        } catch (ServiceException e) {
+                toggleButtons();
+            } catch (ServiceException e) {
+                billsController.fxDialog("Create Bill", "", "Couldn't remove item.", Alert.AlertType.WARNING);
+            }
         }
     }
 
@@ -184,9 +199,15 @@ public class BillCreateViewController {
         }
     }
 
-    private void selectionIsValid(TableView tv) {
-        if (tv.getSelectionModel().getSelectedItem() == null) {
-            billsController.fxDialog("Create Bill", "ERROR", "Nothing selected.", Alert.AlertType.ERROR);
-        }
+    private boolean selectionIsValid(TableView tv) {
+        return !(tv.getSelectionModel().getSelectedItem() == null);
+    }
+
+    private boolean textIsValid() {
+        String WORD_REGEX = "[a-zA-ZÄäÖöÜüß]+";
+        boolean txt1 = firstNameTextField.getText().matches(WORD_REGEX);
+        boolean txt2 = lastNameTextField.getText().matches(WORD_REGEX);
+
+        return txt1 && txt2;
     }
 }

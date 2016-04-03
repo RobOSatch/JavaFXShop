@@ -95,10 +95,9 @@ public class StatisticsViewController extends MainViewController {
                     if(entry.getValue() > max){
                         max = entry.getValue();
                     }
-                    series.getData().add(new XYChart.Data(entry.getKey() + "", entry.getValue()));
-                    label += service.getNameForProduct(entry.getKey()) + " | ";
+                    series.getData().add(new XYChart.Data(service.getNameForProduct(entry.getKey()) + "", entry.getValue()));
                 }
-                series.setName(label + " in the last " + amountOfDays + " days");
+                series.setName("All Products in the last " + amountOfDays + " days");
             } else {
                 if (changeView) {
                     productBarChart.getData().clear();

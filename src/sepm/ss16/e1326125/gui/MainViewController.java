@@ -112,11 +112,8 @@ public class MainViewController {
     public void onClickedNewBill() {
         try {
             billsController.openCreateWindow();
-            productsController.setAndFill(service);
         } catch (IOException e) {
             fxDialog("Creating Bill", "ERROR", e.getMessage(), Alert.AlertType.ERROR);
-        } catch (ServiceException ex) {
-            fxDialog("Creating Bill", "ERROR", ex.getMessage(), Alert.AlertType.ERROR);
         }
     }
 

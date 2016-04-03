@@ -33,10 +33,9 @@ public class Main extends Application {
             logger.info("Application started.");
         }
         catch (ServiceException e){
-            logger.info(e.getMessage());
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("");
+            alert.setTitle("Super Erfolgreicher Pferde Megaoutlet");
+            alert.setHeaderText("ERROR");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }

@@ -30,9 +30,6 @@ public class BillViewController extends MainViewController {
 
     private static final Logger logger = LogManager.getLogger(BillViewController.class);
 
-
-    private MainViewController mainViewController;
-
     @FXML
     private TableView<Bill> billTable;
 
