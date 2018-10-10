@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="341.0" xmlns="http://javafx.com/javafx/8.0.20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sepm.ss16.e1326125.gui.BillOpenViewController">
+   <children>
+      <Group layoutX="42.0" layoutY="16.0">
+         <children>
+            <TableView fx:id="billEntryTable" layoutY="93.0" prefHeight="266.0" prefWidth="257.0">
+              <columns>
+                <TableColumn fx:id="productNameColumn" editable="false" prefWidth="111.0" resizable="false" text="Product" />
+                <TableColumn fx:id="productPriceColumn" editable="false" prefWidth="78.0" resizable="false" text="Price" />
+                  <TableColumn fx:id="quantityColumn" editable="false" prefWidth="67.0" resizable="false" text="Quantity" />
+              </columns>
+            </TableView>
+            <VBox layoutX="13.0" spacing="5.0">
+               <children>
+                  <Label text="InvoiceNumber">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="IssueDate">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="First Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label text="Last Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="143.0" spacing="5.0">
+               <children>
+                  <Label fx:id="invoiceNumberLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="100.0" text="1" />
+                  <Label fx:id="issueDateLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="100.0" text="2016-03-24" />
+                  <Label fx:id="firstNameLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="100.0" text="Nathalie" />
+                  <Label fx:id="lastNameLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="100.0" text="Stürzenbecher" />
+               </children>
+            </VBox>
+            <Label layoutX="91.0" layoutY="371.0" text="Total">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalLabel" layoutX="131.0" layoutY="371.0" prefHeight="17.0" prefWidth="77.0" text="-" />
+            <Separator layoutX="125.0" orientation="VERTICAL" prefHeight="83.0" prefWidth="1.0" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

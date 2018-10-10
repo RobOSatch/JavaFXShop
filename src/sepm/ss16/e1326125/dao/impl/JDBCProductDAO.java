@@ -90,7 +90,7 @@ public class JDBCProductDAO implements ProductDAO {
                 logger.debug("Entry added to filtered list.");
             }
         } catch (SQLException ex) {
-            logger.debug(ex.getMessage());
+            logger.error(ex.getMessage());
             throw new DAOException(ex.getMessage());
         }
 

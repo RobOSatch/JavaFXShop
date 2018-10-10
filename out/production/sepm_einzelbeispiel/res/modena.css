@@ -93,7 +93,7 @@ is being used to size a border should also be in pixels.
     /* A light grey that is the base color for objects.  Instead of using
      * -fx-base directly, the sections in this file will typically use -fx-color.
      */
-    -fx-base: rgb(51, 51, 51);;
+    -fx-base: #ececec;
 
     /* A very light grey used for the background of windows.  See also
      * -fx-text-background-color, which should be used as the -fx-text-fill
@@ -126,7 +126,7 @@ is being used to size a border should also be in pixels.
 
     /* A bright blue for highlighting/accenting objects.  For example: selected
      * text; selected items in menus, lists, trees, and tables; progress bars */
-    -fx-accent: #f09b00;
+    -fx-accent: #0096C9;
 
     /* Default buttons color, this is similar to accent but more subtle */
     -fx-default-button: #ABD8ED;
@@ -147,7 +147,7 @@ is being used to size a border should also be in pixels.
     -fx-color: -fx-base;
 
     /* Chart Color Palette */
-    CHART_COLOR_1: #ffff00;
+    CHART_COLOR_1: #f3622d;
     CHART_COLOR_2: #fba71b;
     CHART_COLOR_3: #57b757;
     CHART_COLOR_4: #41a9c9;
